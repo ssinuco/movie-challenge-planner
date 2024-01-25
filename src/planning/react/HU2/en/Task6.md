@@ -10,7 +10,7 @@ This task ensures the creation of a reusable `MovieCard` component that can be e
 
 - [ ] Component Creation:
 
-    - [ ] Create a file named `MovieCard`.tsx within the components folder.
+    - [ ] Create a file named `MovieCard.tsx` within the components folder.
 
 - [ ] Props:
 
@@ -30,7 +30,7 @@ This task ensures the creation of a reusable `MovieCard` component that can be e
 
 ## Definition of Done:
 
-- [ ] The `MovieCard`.tsx file is created within the components folder.
+- [ ] The `MovieCard.tsx` file is created within the components folder.
 
 - [ ] The component receives a prop named movie of type Movie.
 

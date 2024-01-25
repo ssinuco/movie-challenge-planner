@@ -10,7 +10,7 @@ This task ensures the creation of a `MovieDetail` component that provides a deta
 
 - [ ] Component Creation:
 
-    - [ ] Create a file named `MovieDetail`.tsx within the `components` folder.
+    - [ ] Create a file named `MovieDetail.tsx` within the `components` folder.
 
 - [ ] Display Information:
 
@@ -44,7 +44,7 @@ This task ensures the creation of a `MovieDetail` component that provides a deta
 
 ## Definition of Done:
 
-- [ ] The `MovieDetail.tsx`` file is created within the components or pages folder.
+- [ ] The `MovieDetail.tsx` file is created within the components or pages folder.
 
 - [ ] The `getMovieDetail` service is used to fetch detailed information about the movie based on its id.
 
