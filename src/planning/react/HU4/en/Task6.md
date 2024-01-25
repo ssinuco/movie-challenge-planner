@@ -10,7 +10,7 @@ This task ensures the creation of a reusable `ListOptions` component that allows
 
 - [ ] Component Creation:
 
-    - [ ] Create a file named `ListOptions.tsx`` within the components folder.
+    - [ ] Create a file named `ListOptions.tsx` within the components folder.
 
 - [ ] Props: The component should receive the following props:
 
@@ -62,7 +62,7 @@ This task ensures the creation of a reusable `ListOptions` component that allows
 
 ## Definition of Done:
 
-- [ ] The `ListOptions`.tsx file is created within the components folder.
+- [ ] The `ListOptions.tsx` file is created within the components folder.
 
 - [ ] Dropdown UI is displayed with correct highlighting for the selected option.
 

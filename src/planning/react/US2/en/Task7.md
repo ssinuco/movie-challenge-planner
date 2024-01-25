@@ -10,11 +10,11 @@ This task ensures the creation of a reusable `MovieList` component that displays
 
 - [ ] Component Creation:
 
-    - [ ] Create a file named `MovieList`.tsx within the components folder.
+    - [ ] Create a file named `MovieList.tsx` within the components folder.
 
 - [ ] Props:
 
-    - [ ] Define a prop named movies of type `Movie[]`` representing an array of business models of movies.
+    - [ ] Define a prop named movies of type `Movie[]` representing an array of business models of movies.
 
 - [ ] Rendering Movie Cards:
 

@@ -10,7 +10,7 @@ This task ensures the development of a `Home` component that seamlessly integrat
 
 - [ ] Component Creation:
 
-    - [ ] Create a file named `Home`.tsx within the components or pages folder.
+    - [ ] Create a file named `Home.tsx` within the components or pages folder.
 
     - [ ] Develop the `Home` component using functional component syntax.
 
@@ -40,7 +40,7 @@ This task ensures the development of a `Home` component that seamlessly integrat
 
 ## Definition of Done:
 
-- [ ] The `Home`.tsx file is created within the components or pages folder.
+- [ ] The `Home.tsx` file is created within the components or pages folder.
 
 - [ ] The `Home` component is developed using functional component syntax.
 
