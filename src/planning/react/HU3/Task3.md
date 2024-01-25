@@ -1,59 +1,48 @@
-# Enhance Home Component for Pagination Support
+# Enhance `Home` Component for Pagination Support
 
 ## Description:
 
-Enhance the Home component to support pagination when displaying movies. Integrate the Pagination component, call the getMovies service each time the user clicks on a new page by changing a new state to track pagination. The structure of this new state should be { filters: { pagination: { currentPage: number, totalPages: number } } }.
+Enhance the `Home` component to support pagination using the `Pagination` component. Integrate the `Pagination` component using the `onSelectPage` prop. Each time the user clicks on a page button, change the query parameter `currentPage` to the new page. Also, call the `getMovies` service each time the query parameter `currentPage` changes. Utilize the `useQuery` hook and consider defining two additional states to track the actual page and the total number of pages.
 
-This task ensures that the Home component is enhanced to support pagination, providing a more dynamic and user-friendly experience when navigating through movie data. The integration of he Pagination component allows users to easily switch between pages, triggering the fetching of data for the selected page.
-
-**///////////////// query Params Version**
-
-Enhance the Home component to support pagination when displaying movies. Integrate the Pagination component, call the getMovies service each time the queryParams in the url change, you will need to to use the hook "useQuery" to be able to detect the changes in the URL an the set the correct state
-
-You need to add this new state { filters: { pagination: { currentPage: number, totalPages: number } }
-
-Each time the user clicks on the page button you need to navigate to the new URL.
-
-Your URL should looks like this "/?currentPage=X"
-
-NOTE: totalPages should update when you have the answer from the API
+This task ensures that the `Home` component is enhanced to provide pagination support, allowing users to navigate through different pages of the movie catalog. The integration with the `Pagination` component, use of the `useQuery` hook, and additional states provide a responsive and user-friendly experience.
 
 ## Acceptance Criteria:
 
-- [ ] State Definition:
-
-    - [ ] Define a new state named filter using the useState hook.
-
-    - [ ] The structure of the filter state should be { filters: { pagination: { currentPage: number, totalPages: number } } }.
-
 - [ ] Pagination Component Integration:
 
-    - [ ] Integrate the Pagination component within the Home component, passing the necessary props such as onSelectPage, currentPage, and totalPages.
+    - [ ] Integrate the `Pagination` component within the `Home` component using the `onSelectPage` prop.
 
-- [ ] Pagination State Update:
+- [ ] UseQuery Hook:
 
-    - [ ] Update the filter state each time the user clicks on a new page using the onSelectPage callback.
+    - [ ] Utilize the `useQuery` hook to extract and track query parameters from the URL.
 
-    - [ ] Query Params Version: update the queryParm currentPage state each time the user clicks on a new page using the onSelectPage callback.
+- [ ] Additional States:
+    - [ ] Define two additional states, `actualPage` and `totalPages`, to track the current page and the total number of pages.
 
-    - [ ] When the URL change you need to update the filter state
+- [ ] Page Button Click Handling:
 
-- [ ] Fetch Movie Data on Page Change:
+    - [ ] Change the query parameter `currentPage` to the new page.
 
-    - [ ] Modify the getMovies function call in the Home component to include the current page from the filter state.
+    - [ ] Call the `getMovies` service each time the query parameter `currentPage` changes.
+
+- [ ] Actual Page and Total Pages Display:
+
+    - [ ] Display the actual page and total pages within the `Pagination` component or another relevant UI element.
 
 - [ ] Unit Testing:
 
-    - [ ] Write unit tests for the updated Home component, covering scenarios such as changing pages, updating the filter state, and ensuring that the getMovies service is called with the correct parameters.
+    - [ ] Write unit tests for the enhanced `Home` component, covering scenarios such as page button clicks, URL parameter changes, and successful service calls.
 
 ## Definition of Done:
 
-- [ ] The filter state is defined within the Home component with the structure { filters: { pagination: { currentPage: number, totalPages: number } } }.
+- [ ] The `Pagination` component is integrated within the `Home` component using the `onSelectPage` prop.  
 
-- [ ] The Pagination component is integrated within the Home component, passing the necessary props.
+- [ ] The `useQuery` hook is used to extract and track query parameters from the URL.
 
-- [ ] The filter state is appropriately updated each time the user clicks on a new page.
+- [ ] Two additional states, `actualPage` and `totalPages`, are defined to track the current page and the total number of pages.
 
-- [ ] The getMovies function in the Home component is modified to include the current page from the filter state.
+- [ ] Page button clicks change the query parameter `currentPage` to the new page and trigger calls to the `getMovies` service.
 
-- [ ] Unit tests for the updated Home component pass successfully, covering various pagination scenarios.
+- [ ] The actual page and total pages are displayed within the `Pagination` component or another relevant UI element.
+
+- [ ] Unit tests for the enhanced `Home` component pass successfully, covering various pagination scenarios.

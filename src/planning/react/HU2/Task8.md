@@ -2,9 +2,9 @@
 
 ## Description
 
-Create a React component named `Home` to integrate the `MovieList` component with the `getMovies` service. Display this component on the route \"/\" and implement features to show a loader while fetching data from the API and display a notification in the case of an error.
+Create a React component named `Home` to integrate the `MovieList` component with the `getMovies` service. Display this component on the route "/" and implement features to show a loader while fetching data from the API and display a notification in the case of an error.
 
-This task ensures the development of a `Home` component that seamlessly integrates the `MovieList` component with the `getMovies` service, providing a user-friendly experience with loaders and error notifications. The component is also properly routed to the \"/\" route for user access.
+This task ensures the development of a `Home` component that seamlessly integrates the `MovieList` component with the `getMovies` service, providing a user-friendly experience with loaders and error notifications. The component is also properly routed to the "/" route for user access.
 
 ## Acceptance Criteria:
 
@@ -34,7 +34,7 @@ This task ensures the development of a `Home` component that seamlessly integrat
 
 - [ ] Routing:
 
-    - [ ] Ensure that the `Home` component is displayed when the user navigates to the route \"/\".
+    - [ ] Ensure that the `Home` component is displayed when the user navigates to the route "/".
 
     - [ ] Use a React Router or the routing mechanism of your choice to handle the route.
 
@@ -50,18 +50,18 @@ This task ensures the development of a `Home` component that seamlessly integrat
 
 - [ ] A notification is displayed in the case of an error while fetching data from the API.
 
-- [ ] The `Home` component is displayed when the user navigates to the route \"/\".
+- [ ] The `Home` component is displayed when the user navigates to the route "/".
 
 ## Tip:
 
 Consider defining the following states using the useState hook:
 
 ```js
-const \[isLoading, setIsLoading\] = useState(false);
+const [isLoading, setIsLoading] = useState(false);
 
-const \[movies, setMovies\] = useState\<Movie\[\]\>(\[\]);
+const [movies, setMovies] = useState\<Movie[]>([]);
 
-const \[error, setError\] = useState(false);
+const [error, setError] = useState(false);
 ```
 
 Use these states to manage the loading state, store fetched movie data, and handle errors during the data-fetching process. Update these states based on different stages of the component\'s lifecycle, such as when data fetching is initiated, when data is successfully fetched, or when an error occurs. The useEffect hook can be helpful for managing side effects, such as API requests, in functional components.

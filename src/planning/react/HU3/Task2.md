@@ -4,19 +4,19 @@
 
 Create a React component named Pagination to display a pagination UI control. The component should receive the following props:
 
-- [ ] onSelectPage:
+- [ ] `onSelectPage`:
 
     - [ ] Type: Function
 
     - [ ] Description: A callback function to be called with the clicked page number when a user selects a new page.
 
-- [ ] currentPage:
+- [ ] `currentPage`:
 
     - [ ] Type: Number
 
     - [ ] Description: The current page number.
 
-- [ ] totalPages:
+- [ ] `totalPages`:
 
     - [ ] Type: Number
 
@@ -34,71 +34,41 @@ This task ensures the creation of a reusable Pagination component that can be ea
 
 - [ ] Props Validation:
 
-```{=html}
-<!-- -->
-```
-a.  Validate the incoming props to ensure that they have the correct types (onSelectPage is a function, currentPage and totalPages are numbers).
+    - [ ] Validate the incoming props to ensure that they have the correct types (`onSelectPage` is a function, `currentPage` and `totalPages` are numbers).
 
-```{=html}
-<!-- -->
-```
 - [ ] Pagination UI:
 
-```{=html}
-<!-- -->
-```
-a.  Display a set of pagination buttons based on the total number of pages.
+    - [ ] Display a set of pagination buttons based on the total number of pages.
 
-b.  Highlight the button corresponding to the current page.
+    - [ ] Highlight the button corresponding to the current page.
 
-```{=html}
-<!-- -->
-```
 - [ ] Click Event Handling:
 
-```{=html}
-<!-- -->
-```
-a.  Implement click event handling for pagination buttons.
+    - [ ] Implement click event handling for pagination buttons.
 
-b.  Call the onSelectPage callback with the clicked page number.
+    - [ ] Call the `onSelectPage` callback with the clicked page number.
 
-```{=html}
-<!-- -->
-```
 - [ ] Disable Navigation for Invalid Pages:
 
-```{=html}
-<!-- -->
-```
-a.  Disable the \"Previous\" button if the current page is the first page.
+    - [ ] Disable the "Previous" button if the current page is the first page.
 
-b.  Disable the \"Next\" button if the current page is the last page.
+    - [ ] Disable the "Next" button if the current page is the last page.
 
-```{=html}
-<!-- -->
-```
 - [ ] Unit Testing:
 
-```{=html}
-<!-- -->
-```
-a.  Write unit tests for the Pagination component, covering scenarios such as clicking on pagination buttons and validating UI changes based on different props.
+    - [ ] Write unit tests for the Pagination component, covering scenarios such as clicking on pagination buttons and validating UI changes based on different props.
 
 ## Definition of Done:
 
 - [ ] The Pagination.tsx file is created within the components folder.
 
-```{=html}
-<!-- -->
-```
 - [ ] The Pagination component is developed using functional component syntax.
 
 - [ ] Incoming props are validated to ensure correct types.
 
 - [ ] Pagination UI is displayed with correct button highlighting based on the current page.
 
-- [ ] Click event handling is implemented to call the onSelectPage callback with the clicked page number.
+- [ ] Click event handling is implemented to call the `onSelectPage` callback with the clicked page number.
 
 - [ ] Navigation buttons are disabled appropriately for the first and last pages.
 
