@@ -1,32 +1,28 @@
 import { Octokit, } from "octokit";
-import readline from "readline";
 import fs from 'node:fs/promises';
 import { program as commander } from 'commander';
 import path from 'path';
-import log from 'why-is-node-running';
 import inquirer from 'inquirer';
 
 const DELAY = 3;
+const REPO_NAME = 'planner-movie-challenge-fw-repo-3';
+const PROJECT_NAME = 'planner-movie-challenge-fw-project-3';
 
-commander
-  .version('1.0.0', '-v, --version')
-  .usage('[OPTIONS]...')
-  .option('-t, --token <value>')
-  .parse(process.argv);
+import { Command, Option } from 'commander';
+const program = new Command();
 
-const options = commander.opts();
+program
+  .name('movie-challenge-planner')
+  .description('CLI to create planning for Movie Challenge as Github Project')
+  .addOption(new Option('-t, --token <value>', 'Github Personal Access Token').makeOptionMandatory())
+  .addOption(new Option('-l, --lang <value>', 'Language for planning').makeOptionMandatory().choices(['es', 'pt']))
+  .addOption(new Option('-f, --framework <value>', 'Framework for planning').makeOptionMandatory().choices(['react', 'angular']));
 
-const REPO_NAME = 'planner-movie-challenge-fw-repo-1';
-const PROJECT_NAME = 'planner-movie-challenge-fw-project-1';
+program.parse();
 
-const githubToken = options.token;
-
-if (!githubToken) {
-  console.error('Please provide a GitHub personal access token using --token');
-  process.exit(1);
-}
-
-const octokit = new Octokit({ auth: githubToken });
+const options = program.opts();
+const {token, lang, framework} = options;
+const octokit = new Octokit({ auth: token });
 
 async function getOwner() {
   const query = `
@@ -59,8 +55,14 @@ async function getProjects(login, projectName) {
     login,
     condition
   };
-  const result = await graphqlRequest(query, variables);
-  return result?.user?.projectsV2?.nodes?.[0]?.id;
+  try{
+    const result = await graphqlRequest(query, variables);
+    return result?.user?.projectsV2?.nodes?.[0]?.id;
+  }
+  catch(error){
+    console.log(error);
+    return null;
+  }
 }
 
 async function getRepository(repoName, ownerLogin) {
@@ -75,8 +77,14 @@ async function getRepository(repoName, ownerLogin) {
     name: repoName,
     owner: ownerLogin
   };
-  const result = await graphqlRequest(query, variables);
-  return result?.repository?.id;
+  try{
+    const result = await graphqlRequest(query, variables);
+    return result?.repository?.id;  
+  }
+  catch(error){
+    console.log(error);
+    return null;
+  }
 }
 
 async function createRepository(name) {
@@ -302,14 +310,13 @@ async function main() {
 
   //Process files
   const BASE_DIR = './planning';
-  const FRAMEWORK = 'react';
-
-  const initialPath = path.join(BASE_DIR, FRAMEWORK);
+  
+  const initialPath = path.join(BASE_DIR, framework);
   try {
     const userStoryFolders = await fs.readdir(initialPath);
     for (const userStoryFolder of userStoryFolders) {
       //process HU File
-      const filePath = path.join(initialPath, userStoryFolder, `${userStoryFolder}.md`);
+      const filePath = path.join(initialPath, userStoryFolder, lang, `${userStoryFolder}.md`);
       try {
         const [title, description] = await extractInfoFromFile(filePath);
 
@@ -318,10 +325,10 @@ async function main() {
         await sleep(DELAY);
 
         //process tasks files
-        const taskFiles = await fs.readdir(path.join(initialPath, userStoryFolder));
+        const taskFiles = await fs.readdir(path.join(initialPath, userStoryFolder, lang));
         for (const taskFile of taskFiles) {
           if (taskFile.startsWith('Task')) {
-            const filePath = path.join(initialPath, userStoryFolder, taskFile);
+            const filePath = path.join(initialPath, userStoryFolder, lang, taskFile);
             try {
               const [title, description] = await extractInfoFromFile(filePath);
 
