@@ -2,7 +2,7 @@
 
 ## Descrição:
 
-Implementar um método chamado `getMovieGenres` no serviço `APIService` para obter uma lista de gêneros de filmes a partir do endpoint `/genre/movie/list`. O método `getMovieGenres` não deve receber nenhum parâmetro e deve retornar um _Observable_ que retorne um array de gêneros.
+Implementar um método chamado `getMovieGenres` no serviço `APIService` para obter uma lista de gêneros de filmes a partir do endpoint `/genre/movie/list`. O método `getMovieGenres` não deve receber nenhum parâmetro e deve retornar um _Observable_ que retorne um array de objetos como `[{id: number, name: string}]`.
 
 ## Critérios de aceitação:
 
@@ -12,7 +12,7 @@ Implementar um método chamado `getMovieGenres` no serviço `APIService` para ob
 
 - [ ] O método deve fazer uma solicitação API para recuperar os gêneros de filmes do endpoint `/genre/movie/list`.
 
-- [ ] O método deve retornar um _Observable_ que retorne um array de gêneros.
+- [ ] O método deve retornar um _Observable_ que retorne um array de objetos como `[{id: number, name: string}]`.
 
 - [ ] Escrever testes unitários para o método `getMovieGenres`, incluindo casos de teste para uma solicitação API bem-sucedida e tratamento de erros.
 
