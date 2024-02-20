@@ -1,8 +1,8 @@
-# Desarrollar el componente de reacción `app-list-options`
+# Desarrollar el componente de Angular `app-list-options`
 
 ## Descripción:
 
-Cree un componente de Angular llamado `app-list-options` que permita al usuario seleccionar un elemento de una lista de opciones y borrar la selección.
+Crear un componente de Angular llamado `app-list-options` que permita al usuario seleccionar un elemento de una lista de opciones y borrar la selección.
 
 ## Criterios de aceptación:
 
@@ -24,19 +24,19 @@ Cree un componente de Angular llamado `app-list-options` que permita al usuario 
 
 - [ ] UI desplegable:
 
-     - [ ] Muestra una [_<select>_](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) para listar opciones proporcionadas.
+     - [ ] Usar un [_<select>_](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) para listar opciones proporcionadas.
 
-     - [ ] Resalte la opción seleccionada en el _<select>_.
+     - [ ] Resaltar la opción seleccionada en el _<select>_.
 
 - [ ] Selección de opción:
 
-     - [ ] Emita el evento `onChange` cuando el usuario seleccione una opcion del _<select>_.
+     - [ ] Emitir el evento `onChange` cuando el usuario seleccione una opcion del _<select>_.
 
 - [ ] Borrar selección:
 
-     - [ ] Incluye un botón o icono para borrar la selección actual.
+     - [ ] Incluir un botón o icono para borrar la selección actual.
 
-     - [ ] Emita el evento `onClear` cuando el usuario haga clic para eliminar la selección.
+     - [ ] Emitir el evento `onClear` cuando el usuario haga clic para eliminar la selección.
 
 - [ ] Prueba unitaria:
 

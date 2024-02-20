@@ -2,9 +2,9 @@
 
 ## Descrição
 
-Modificar a função `formatMovie` para aprimorar o modelo de negócio `Movie` definindo-se uma chave `genres` adicional. Esta chave deve ser um array de _strings_ que contenham os nomes dos gêneros de filmes com base na chave `genre_ids`. A função `formatMovie` deve receber, como parâmetro, o _Map_ do JavaScript gerado pela função `formatMovieGenre` e usá-lo para transformar a chave `genre_ids` em um array de _strings_.
+Modificar a função `formatMovie` para aprimorar o modelo de negócio `Movie` definindo-se uma chave `genres` adicional. Esta chave deve ser um array de _strings_ que contenham os nomes dos gêneros de filmes com base na chave `genre_ids`. A função `formatMovie` deve receber, como parâmetro, o _Map_ do JavaScript gerado pela função `formatGenresToMap` e usá-lo para transformar a chave `genre_ids` em um array de _strings_.
 
-Modificar o método `getMovies` para receber como parâmetro o _Map_ do JavaScript gerado pela função `formatMovieGenre` e usá-lo na chamada de `formatMovie`.
+Modificar o método `getMovies` para receber como parâmetro o _Map_ do JavaScript gerado pela função `formatGenresToMap` e usá-lo na chamada de `formatMovie`.
 
 ## Critérios de aceitação
 
@@ -12,7 +12,7 @@ Modificar o método `getMovies` para receber como parâmetro o _Map_ do JavaScri
 
 - [ ] Função `formatMovie`
 
-    - [ ] Modificar a função `formatMovie` existente para aceitar um parâmetro adicional, um _Map_ do JavaScript gerado por `formatMovieGenre`.
+    - [ ] Modificar a função `formatMovie` existente para aceitar um parâmetro adicional, um _Map_ do JavaScript gerado por `formatGenresToMap`.
 
     - [ ] A função `formatMovie` deve usar o novo parâmetro para substituir o ID do gênero na chave `genre_ids` pelo seu nome de gênero correspondente.
 
@@ -51,7 +51,7 @@ Modificar o método `getMovies` para receber como parâmetro o _Map_ do JavaScri
 
 - [ ] Método `getMovies`
 
-    - [ ] Modificar o método `getMovies` existente para aceitar um parâmetro adicional, um _Map_ do JavaScript gerado por `formatMovieGenre`.
+    - [ ] Modificar o método `getMovies` existente para aceitar um parâmetro adicional, um _Map_ do JavaScript gerado por `formatGenresToMap`.
 
     - [ ] Usar o novo parâmetro ao chamar a função `formatMovie`.
 
@@ -67,7 +67,7 @@ Modificar o método `getMovies` para receber como parâmetro o _Map_ do JavaScri
 
 ## Definição de Pronto:
 
-- [ ] A função `formatMovie` é modificada para aceitar um parâmetro adicional, um _Map_ do JavaScript gerado por `formatMovieGenre`.
+- [ ] A função `formatMovie` é modificada para aceitar um parâmetro adicional, um _Map_ do JavaScript gerado por `formatGenresToMap`.
 
 - [ ] O modelo de negócio de filmes é aprimorado ao adicionar uma chave adicional chamada `genres`.
 
@@ -77,8 +77,8 @@ Modificar o método `getMovies` para receber como parâmetro o _Map_ do JavaScri
 
 - [ ] Os testes unitários para a função `formatMovie` passam com sucesso e cobrem vários cenários.
 
-- [ ] O método `getMovies` é modificado para aceitar um parâmetro adicional, um _Map_ do JavaScript gerado por `formatMovieGenre`.
+- [ ] O método `getMovies` é modificado para aceitar um parâmetro adicional, um _Map_ do JavaScript gerado por `formatGenresToMap`.
 
-- [ ] A função `formatMovieGenre` é chamada em `getMovies` com o novo parâmetro.
+- [ ] A função `formatGenresToMap` é chamada em `getMovies` com o novo parâmetro.
 
 - [ ] Os testes unitários para o método `getMovies` passam com sucesso e cobrem vários cenários.

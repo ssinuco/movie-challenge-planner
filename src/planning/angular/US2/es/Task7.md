@@ -12,7 +12,7 @@ Crear un componente Angular llamado `app-home` para integrar el componente `app-
 
 - [ ] Integración con `app-movie-list`:
 
-    - [ ] Integre el componente `app-movie-list` dentro del componente `app-home`.
+    - [ ] Integrar el componente `app-movie-list` dentro del componente `app-home`.
 
     - [ ] Utilizar el método `getMovies` del servicio `APIService` para obtener los datos de las películas a mostrar.
 
@@ -20,17 +20,17 @@ Crear un componente Angular llamado `app-home` para integrar el componente `app-
 
     - [ ] Mostrar un cargador (por ejemplo, un spinner o un mensaje de carga) mientras se obtienen datos de la API.
 
-    - [ ] Asegúrese de que el cargador se muestra al usuario durante el proceso de obtención de datos.
+    - [ ] Asegurar que el cargador se muestra al usuario durante el proceso de obtención de datos.
 
 - [ ] Notificación de errores:
 
-    - [ ] Implemente un mecanismo para mostrar una notificación en caso de error durante la obtención de datos de la API.
+    - [ ] Implementar un mecanismo para mostrar una notificación en caso de error durante la obtención de datos de la API.
 
     - [ ] La notificación debe transmitir un mensaje de error claro al usuario.
 
 - [ ] Enrutamiento:
 
-    - [ ] Asegúrese de que el componente `app-home` se muestra cuando el usuario navega a la ruta "/".
+    - [ ] Asegurar de que el componente `app-home` se muestra cuando el usuario navega a la ruta "/".
 
 ## Definición de Hecho:
 

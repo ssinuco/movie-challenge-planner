@@ -28,7 +28,7 @@ Cada vez que os parâmetros de consulta `generId` e `sortBy` mudarem, chame o m�
 
 - [ ] Chamadas de serviço:
 
-     - [ ] Chamar o método `getMovies` apropriadamente sempre que os parâmetros de consulta `generId` e `sortBy` mudarem, usando a inscrição no _Observable_ `queryParams` do serviço `ActivatedRoute`.
+     - [ ] Executar o método `getMovies` apropriadamente sempre que os parâmetros de consulta `generId` e `sortBy` mudarem, usando a inscrição no _Observable_ `queryParams` do serviço `ActivatedRoute`.
 
 - [ ] Testes unitários:
 

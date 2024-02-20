@@ -14,15 +14,15 @@ Esta tarea garantiza una gestión segura y organizada del token API, evitando su
 
     - [ ] Acceder al portal para desarrolladores de The Movie DB y generar una clave/token de API.
 
-    - [ ] Compruebe que la clave/token de API proporciona acceso a los puntos finales necesarios, como /discover/movie.
+    - [ ] Comprobar que la clave/token de API proporciona acceso a los puntos finales necesarios, como /discover/movie.
 
 - [ ] Variable de entorno:
 
-    - [ ] Añada un par clave-valor `TOKEN_API=<Su-API-Token>` en los archivos _src/environments/environment.ts_ y _src/environments/environment.prod.ts_, sustituyendo `<Su-API-Token>` por el token de API real obtenido.
+    - [ ] Añadir un par clave-valor `TOKEN_API=<Su-API-Token>` en los archivos _src/environments/environment.ts_ y _src/environments/environment.prod.ts_, sustituyendo `<Su-API-Token>` por el token de API real obtenido.
 
 - [ ] Manipulación segura:
 
-    - [ ] Asegúrese de que los archivos _src/environments/environment.ts_ y _src/environments/environment.prod.ts_ se añade al archivo .gitignore del proyecto para evitar la exposición accidental de información sensible.
+    - [ ] Asegurar que los archivos _src/environments/environment.ts_ y _src/environments/environment.prod.ts_ se añade al archivo .gitignore del proyecto para evitar la exposición accidental de información sensible.
 
 ## Definición de Hecho:
 

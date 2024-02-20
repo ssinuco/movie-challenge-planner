@@ -8,21 +8,21 @@ Mejorar el componente `app-home` para admitir la paginación utilizando el compo
 
 - [ ] Integración de componentes de paginación:
 
-     - [ ] Integre el componente `app-pagination` dentro del componente `app-home` usando el _Output_ `onSelectPage`.
+     - [ ] Integrar el componente `app-pagination` dentro del componente `app-home` usando el _Output_ `onSelectPage`.
 
 - [ ] _Observable_ `queryParams`:
 
-     - [ ] Utilice el _Observable_ `queryParams` del servicio `ActivatedRoute` para extraer y rastrear los _query params_ de la URL.
+     - [ ] Utilizar el _Observable_ `queryParams` del servicio `ActivatedRoute` para extraer y rastrear los _query params_ de la URL.
 
 - [ ] Manejo de clicks en los botones de página:
 
      - [ ] Cuando el usuario haga clic en un botón de página, cambie el _query param_ `currentPage` de la URL a la nueva página.
 
-     - [ ] Llame el método `getMovies` cada vez que cambie el parámetro de consulta `currentPage` suscribiendose al _Observable_ `queryParams` del servicio `ActivatedRoute`.
+     - [ ] Ejecutar el método `getMovies` cada vez que cambie el parámetro de consulta `currentPage` suscribiendose al _Observable_ `queryParams` del servicio `ActivatedRoute`.
 
 - [ ] Pruebas unitarias:
 
-     - [ ] Escriba pruebas unitarias para el componente `app-home` mejorado, que abarquen escenarios como clics en botones de página, cambios de parámetros de URL y llamadas de servicio exitosas.
+     - [ ] Escribir pruebas unitarias para el componente `app-home` mejorado, que abarquen escenarios como clics en botones de página, cambios de parámetros de URL y llamadas de servicio exitosas.
 
 ## Definición de Hecho:
 

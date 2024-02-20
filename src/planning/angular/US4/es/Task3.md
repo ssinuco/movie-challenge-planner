@@ -2,9 +2,11 @@
 
 ## Descripción
 
-Modificar la función `formatMovie` para mejorar el modelo de negocio `Movie` agregando una clave de `genres` adicional. Esta clave debe ser un arreglo de _strings_ que contengan los nombres de los géneros de películas según la llave `genre_ids`. La función `formatMovie`  debería recibir, como parámetro, el _Map_ de JavaScript generado por la función `formatMovieGenre` y usarlo para transformar la llave `genre_ids` a un un arreglo de _strings_.
+Modificar la función `formatMovie` para mejorar el modelo de negocio `Movie` agregando una clave de `genres` adicional. Esta clave debe ser un arreglo de _strings_ que contengan los nombres de los géneros de películas según la llave `genre_ids`.
 
-Modificar el método `getMovies` para recibir como parámetro el _Map_ de JavaScript generado por la función `formatMovieGenre` y usarlo en el llamado de `formatMovie`.
+La función `formatMovie`  debería recibir un parámetro adicional, el _Map_ de JavaScript generado por la función `formatGenresToMap` y usarlo para transformar la llave `genre_ids` a un un arreglo de _strings_.
+
+Modificar el método `getMovies` para recibir como parámetro el _Map_ de JavaScript generado por la función `formatGenresToMap` y usarlo en el llamado de `formatMovie`.
 
 ## Criterios de aceptación
 
@@ -12,7 +14,7 @@ Modificar el método `getMovies` para recibir como parámetro el _Map_ de JavaSc
 
 - [ ] Función `formatMovie`
 
-    - [ ] Modificar la función `formatMovie` existente para aceptar un parámetro adicional, un _Map_ de JavaScript generado por `formatMovieGenre`.
+    - [ ] Modificar la función `formatMovie` existente para aceptar un parámetro adicional, un _Map_ de JavaScript generado por `formatGenresToMap`.
 
     - [ ] La función `formatMovie` debe usar el nuevo parametro para reemplazar el ID de género en la llave `genere_ids` con su nombre de género correspondiente.
     
@@ -51,15 +53,15 @@ Modificar el método `getMovies` para recibir como parámetro el _Map_ de JavaSc
 
 - [ ] Método `getMovies`
 
-    - [ ] Modificar el método `getMovies` existente para aceptar un parámetro adicional, un _Map_ de JavaScript generado por `formatMovieGenre`.
+    - [ ] Modificar el método `getMovies` existente para aceptar un parámetro adicional, un _Map_ de JavaScript generado por `formatGenresToMap`.
 
     - [ ] Usar el nuevo parámetro al llamar la función `formatMovie`.
 
 - [ ] Pruebas unitarias:
 
-     - [ ] Modificar las pruebas unitarias existentes para la función `formatMovie` en `transformers.spec.ts`.
+     - [ ] Modificar las pruebas unitarias existentes para la función `formatMovie`.
 
-     - [ ] Modificar las pruebas unitarias existentes para la función `getMovies` en `api.service.spec.ts`.
+     - [ ] Modificar las pruebas unitarias existentes para la función `getMovies`.
 
      - [ ] Pruebe la función con varios tipos de datos de películas de API para garantizar una transformación correcta.
 
@@ -67,7 +69,7 @@ Modificar el método `getMovies` para recibir como parámetro el _Map_ de JavaSc
 
 ## Definición de Hecho:
 
-- [ ] La función `formatMovie` se modifica para aceptar un parámetro adicional, un _Map_ de JavaScript generado por `formatMovieGenre`.
+- [ ] La función `formatMovie` se modifica para aceptar un parámetro adicional, un _Map_ de JavaScript generado por `formatGenresToMap`.
 
 - [ ] El modelo de negocio de películas se mejora al agregar una llave adicional denominada `genres`.
 
@@ -77,8 +79,8 @@ Modificar el método `getMovies` para recibir como parámetro el _Map_ de JavaSc
 
 - [ ] Las pruebas unitarias para la función `formatMovie` pasan exitosamente y cubren varios escenarios.
 
-- [ ] El método `getMovies` se modifica para aceptar un parámetro adicional, un _Map_ de JavaScript generado por `formatMovieGenre`.
+- [ ] El método `getMovies` se modifica para aceptar un parámetro adicional, un _Map_ de JavaScript generado por `formatGenresToMap`.
 
-- [ ] La function `formatMovieGenre` es llamada en `getMovies` con el nuevo parámetro.
+- [ ] La function `formatGenresToMap` es llamada en `getMovies` con el nuevo parámetro.
 
 - [ ] Las pruebas unitarias para el metodo `getMovies` pasan exitosamente y cubren varios escenarios.

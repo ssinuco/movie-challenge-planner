@@ -32,6 +32,4 @@ Modificar o componente Angular existente `app-movie-card` para incluir a visuali
 
 - [ ] Os gêneros de filmes estão integrados na interface do usuário do componente juntamente com outros detalhes do filme.
 
-- [ ] A modificação da interface do usuário é responsiva e visualmente agradável em vários tamanhos de tela.
-
 - [ ] Os testes unitários para o componente `app-movie-card` modificado passam com sucesso, cobrindo diferentes cenários relacionados à exibição de gêneros de filmes.

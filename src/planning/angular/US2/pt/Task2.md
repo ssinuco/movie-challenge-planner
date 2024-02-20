@@ -1,4 +1,4 @@
-# Criar Modelo (Tipo) TypeScript para Filme
+# Criar TypeScript Type para Movie Model
 
 ## Descrição:
 

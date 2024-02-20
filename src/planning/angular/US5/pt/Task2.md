@@ -1,8 +1,8 @@
-# Criar componente Angular `MovieDetail`
+# Criar componente Angular `app-movie-detail`
 
 ## Descrição:
 
-Criar um componente Angular chamado `MovieDetail` para exibir informações detalhadas sobre um único filme. Exiba este componente na rota `/movie/:id` e implemente funções para mostrar um carregador enquanto obtém dados da API e exibir uma notificação em caso de erro. Extraia a identificação do filme da URL e use-a no serviço `getMovieDetail`. Forneça uma maneira para que o usuário retorne à página anterior a partir do componente `MovieDetail`.
+Criar um componente Angular chamado `app-movie-detail` para exibir informações detalhadas sobre um único filme. Exiba este componente na rota `/movie/:id` e implemente funções para mostrar um carregador enquanto obtém dados da API e exibir uma notificação em caso de erro. Extraia a identificação do filme da URL e use-a no serviço `getMovieDetail`. Forneça uma maneira para que o usuário retorne à página anterior a partir do componente `app-movie-detail`.
 
 ## Critérios de aceitação:
 
@@ -34,15 +34,15 @@ Criar um componente Angular chamado `MovieDetail` para exibir informações deta
 
 - [ ] Configuração de rota:
 
-     - [ ] Configurar a rota para o componente `MovieDetail` para ser `/movie/:id`, onde `:id` é o id do filme.
+     - [ ] Configurar a rota para o componente `app-movie-detail` para ser `/movie/:id`, onde `:id` é o id do filme.
 
 - [ ] Testes unitários:
 
-     - [ ] Escrever testes unitários para o componente `MovieDetail` para garantir a integração correta com `MovieDetailCard`, a obtenção adequada de dados e o tratamento de erros.
+     - [ ] Escrever testes unitários para o componente `app-movie-detail` para garantir a integração correta com `MovieDetailCard`, a obtenção adequada de dados e o tratamento de erros.
 
 ## Definição de Pronto:
 
-- [ ] O componente `app-pagination` foi criado dentro da pasta _src/layout_.
+- [ ] O componente `app-movie-detail` foi criado dentro da pasta _src/layout_.
 
 - [ ] O serviço `getMovieDetail` foi utilizado para obter informações detalhadas sobre o filme com base em sua identificação.
 
@@ -52,6 +52,6 @@ Criar um componente Angular chamado `MovieDetail` para exibir informações deta
 
 - [ ] O tratamento de erros foi implementado para exibir uma notificação em caso de erro durante a obtenção de dados.
 
-- [ ] A rota para o componente `MovieDetail` está configurada como `/movie/:id`.
+- [ ] A rota para o componente `app-movie-detail` está configurada como `/movie/:id`.
 
-- [ ] Os testes unitários para o componente `MovieDetail` passam com sucesso e cobrem vários cenários.
+- [ ] Os testes unitários para o componente `app-movie-detail` passam com sucesso e cobrem vários cenários.

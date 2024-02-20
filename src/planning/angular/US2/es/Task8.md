@@ -12,25 +12,25 @@ Escribir pruebas de integración para asegurar que el componente `app-home` mues
 
 - [ ] Visualización correcta de los datos:
 
-    - [ ] Escribe una prueba para asegurar que el componente `app-home` muestra correctamente las películas basadas en datos simulados.
+    - [ ] Escribir una prueba para asegurar que el componente `app-home` muestra correctamente las películas basadas en datos simulados.
 
-    - [ ] Utiliza datos simulados que representen varios escenarios, como diferentes películas con diversas propiedades.
+    - [ ] Utilizar datos simulados que representen varios escenarios, como diferentes películas con diversas propiedades.
 
 - [ ] Visualización del cargador:
 
-    - [ ] Compruebe que se muestra un cargador (por ejemplo, un spinner) cuando se obtienen los datos.
+    - [ ] Comprobar que se muestra un cargador (por ejemplo, un spinner) cuando se obtienen los datos.
 
 - [ ] Tratamiento de errores:
 
-    - [ ] Escriba una prueba para simular un error de la API durante la obtención de datos.
+    - [ ] Escribir una prueba para simular un error de la API durante la obtención de datos.
 
-    - [ ] Asegúrese de que el componente `app-home` gestiona adecuadamente el error mostrando un mensaje de error o una notificación.
+    - [ ] Asegurar que el componente `app-home` gestiona adecuadamente el error mostrando un mensaje de error o una notificación.
 
 - [ ] Limpieza y aislamiento:
 
-    - [ ] Asegúrese de que cada caso de prueba tiene una limpieza y aislamiento adecuados para evitar interferencias entre las pruebas.
+    - [ ] Asegurar que cada caso de prueba tiene una limpieza y aislamiento adecuados para evitar interferencias entre las pruebas.
 
-    - [ ] Utilice utilidades de prueba para restablecer el estado entre pruebas.
+    - [ ] Utilizar utilidades de prueba para restablecer el estado entre pruebas.
 
 ## Definición de Hecho
 

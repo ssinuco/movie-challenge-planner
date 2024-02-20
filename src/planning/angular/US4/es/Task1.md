@@ -8,7 +8,7 @@ Implementar un método llamado `getMovieGenres` en el servicio `APIService` para
 
 - [ ] Implementar un método denominado `getMovieGenres` dentro del servicio `APIService`.
 
-- [ ]  El método no debería recibir ningún parámetro.
+- [ ] El método no debería recibir ningún parámetro.
 
 - [ ] El método debería hacer una solicitud API para recuperar los géneros de películas del endpoint `/genre/movie/list`.
 

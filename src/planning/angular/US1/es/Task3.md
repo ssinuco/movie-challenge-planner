@@ -8,7 +8,7 @@ Crear la estructura inicial del proyecto para el SPA, organizando archivos y car
 
 Dentro de _src_, crear las siguientes carpetas:
 
-- [ ] _app/layouts_: componentes que definen la estructura general de las páginas o secciones de tu aplicación. Los _layouts_ son componentes que pueden contener otros componentes para organizar la apariencia de una página.
+- [ ] _app/layout_: componentes que definen la estructura general de las páginas o secciones de tu aplicación. Los _layouts_ son componentes que pueden contener otros componentes para organizar la apariencia de una página.
 
 - [ ] _app/mocks_: mocks que proporcionan datos de prueba para simular el comportamiento de una API o servicio durante el desarrollo y las pruebas.
 

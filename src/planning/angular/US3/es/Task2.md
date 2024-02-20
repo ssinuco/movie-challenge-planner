@@ -22,21 +22,21 @@ Crear un componente de Angular llamado `app-pagination` para mostrar un control 
 
 - [ ] UI de paginación:
 
-     - [ ] Muestra un conjunto de botones de paginación según el número total de páginas.
+     - [ ] Mostrar un conjunto de botones de paginación según el número total de páginas.
 
-     - [ ] Resalte el botón correspondiente a la página actual.
+     - [ ] Resaltar el botón correspondiente a la página actual.
 
 - [ ] Manejo del evento Click:
 
      - [ ] Implementar el manejo de eventos de clic para los botones de paginación.
 
-     - [ ] Emita el evento `onSelectPage` con el número de página en el que se hizo clic.
+     - [ ] Emitir el evento `onSelectPage` con el número de página en el que se hizo clic.
 
 - [ ] Deshabilitar la navegación para páginas no válidas:
 
-     - [ ] Desactive el botón "Anterior" si la página actual es la primera página.
+     - [ ] Deshabilitar el botón "Anterior" si la página actual es la primera página.
 
-     - [ ] Deshabilite el botón "Siguiente" si la página actual es la última página.
+     - [ ] Deshabilitar el botón "Siguiente" si la página actual es la última página.
 
 - [ ] Pruebas unitarias:
 
