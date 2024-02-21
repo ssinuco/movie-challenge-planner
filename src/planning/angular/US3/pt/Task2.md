@@ -1,4 +1,4 @@
-# Desenvolver o componente Angular de paginação
+# 3.2 Desenvolver o componente Angular de paginação
 
 ## Descrição:
 

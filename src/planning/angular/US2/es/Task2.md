@@ -1,4 +1,4 @@
-# Crear TypeScript Type para Movie Model
+# 2.2 Crear TypeScript Type para Movie Model
 
 ## Descripción:
 

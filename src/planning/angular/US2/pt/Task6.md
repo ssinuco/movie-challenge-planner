@@ -1,4 +1,4 @@
-# Desenvolver o Componente Angular `app-movie-list`
+# 2.6 Desenvolver o Componente Angular `app-movie-list`
 
 ## Descrição: 
 

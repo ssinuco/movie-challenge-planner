@@ -1,4 +1,4 @@
-# Desarrollar el componente de Angular `app-list-options`
+# 4.6 Desarrollar el componente de Angular `app-list-options`
 
 ## Descripción:
 

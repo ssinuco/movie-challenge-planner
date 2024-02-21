@@ -1,4 +1,4 @@
-# Desenvolver o Componente Angular `app-home` com Integração `app-movie-list`
+# 2.7 Desenvolver o Componente Angular `app-home` com Integração `app-movie-list`
 
 ## Descrição
 

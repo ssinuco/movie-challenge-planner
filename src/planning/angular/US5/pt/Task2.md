@@ -1,4 +1,4 @@
-# Criar componente Angular `app-movie-detail`
+# 5.2 Criar componente Angular `app-movie-detail`
 
 ## Descrição:
 

@@ -1,4 +1,4 @@
-# Crear repositorio GitHub y proteger rama _main_
+# 1.2 Crear repositorio GitHub y proteger rama _main_
 
 ## Descripción
 

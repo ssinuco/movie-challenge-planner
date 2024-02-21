@@ -1,4 +1,4 @@
-# Melhore o método `getMovies` do serviço `APIService` para paginação
+# 3.1 Melhore o método `getMovies` do serviço `APIService` para paginação
 
 ## Descrição:
 

@@ -1,4 +1,4 @@
-# Criar repositório GitHub e proteger a branch _main_
+# 1.2 Criar repositório GitHub e proteger a branch _main_
 
 ## Descrição
 

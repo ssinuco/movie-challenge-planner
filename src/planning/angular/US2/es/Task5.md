@@ -1,4 +1,4 @@
-# Desarrollar `app-movie-card` Angular Component
+# 2.5 Desarrollar `app-movie-card` Angular Component
 
 ## Descripción: 
 

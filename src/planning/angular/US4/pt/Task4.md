@@ -1,4 +1,4 @@
-# Modificar o componente `app-movie-card` para exibir gêneros de filmes
+# 4.4 Modificar o componente `app-movie-card` para exibir gêneros de filmes
 
 ## Descrição:
 

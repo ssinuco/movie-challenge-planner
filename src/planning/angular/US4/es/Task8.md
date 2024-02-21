@@ -1,4 +1,4 @@
-# Mejorar el componente `app-home` para integrar componentes `app-list-options`
+# 4.8 Mejorar el componente `app-home` para integrar componentes `app-list-options`
 
 ## Descripción:
 

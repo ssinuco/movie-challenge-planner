@@ -1,4 +1,4 @@
-# Melhorar componente `app-movie-card` para redirecionar para `/movie/:id`
+# 5.3 Melhorar componente `app-movie-card` para redirecionar para `/movie/:id`
 
 ## Descrição:
 

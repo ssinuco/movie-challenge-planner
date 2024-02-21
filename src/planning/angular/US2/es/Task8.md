@@ -1,4 +1,4 @@
-# Desarrollar pruebas de integración para el componente `app-home`
+# 2.8 Desarrollar pruebas de integración para el componente `app-home`
 
 ## Descripción 
 

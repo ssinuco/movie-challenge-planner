@@ -1,4 +1,4 @@
-# Melhorar o componente `app-home` para suporte de paginação
+# 3.3 Melhorar o componente `app-home` para suporte de paginação
 
 ## Descrição:
 

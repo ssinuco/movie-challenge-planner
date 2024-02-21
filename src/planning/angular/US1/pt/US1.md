@@ -1,4 +1,4 @@
-## Configuração do projeto
+# 1. Configuração do projeto
 
 ## Descrição:
 
