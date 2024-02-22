@@ -1,6 +1,5 @@
 import { Octokit, } from "octokit";
 import fs from 'node:fs/promises';
-import { program as commander } from 'commander';
 import path from 'path';
 import inquirer from 'inquirer';
 
@@ -65,21 +64,34 @@ async function getProjects(login, projectName) {
   }
 }
 
-async function getRepository(repoName, ownerLogin) {
+async function getRepository(repoName, ownerLogin, milestoneTitle) {
+  const conditionMilestone = `${milestoneTitle}`;
   const query = `
-    query getRepository ($name: String!, $owner: String!){
+    query getRepository ($name: String!, $owner: String!, $condition: String){
       repository (name: $name, owner: $owner) {
-        id
+        id,
+        milestones(first: 100, query: $condition){
+          nodes {
+            id
+            number
+            issues(first: 100){
+              nodes {
+                id
+              }
+            }
+          }
+        }
       }
     }
   `;
   const variables = {
     name: repoName,
-    owner: ownerLogin
+    owner: ownerLogin,
+    condition: conditionMilestone,
   };
   try{
-    const result = await graphqlRequest(query, variables);
-    return result?.repository?.id;  
+    const result = await graphqlRequest(query, variables);    
+    return result?.repository;  
   }
   catch(error){
     console.log(error);
@@ -185,6 +197,16 @@ async function createMilestone(ownerLogin, repositoryName, title, description) {
   return result.data.node_id;
 }
 
+async function deleteMilestone(ownerLogin, repositoryName, milestoneNumber) {
+  const result = //await octokit.rest.milestones.create({
+    await octokit.request("DELETE /repos/{owner}/{repo}/milestones/{milestone_number}", {
+      owner: ownerLogin,
+      repo: repositoryName,
+      milestone_number: milestoneNumber
+    });
+  return result;
+}
+
 async function createIssue(repositoryId, milestoneId, title, body,) {
   const mutation = `
     mutation CreateIssue($body: String, $repositoryId: ID!, $milestoneId: ID, $title: String!) {
@@ -205,6 +227,23 @@ async function createIssue(repositoryId, milestoneId, title, body,) {
 
   const result = await graphqlRequest(mutation, variables);
   return result.createIssue.issue.id;
+}
+
+async function deleteIssue(issueId) {
+  const mutation = `
+    mutation DeleteIssue($issueId: ID!) {
+      deleteIssue(input: { issueId: $issueId }) {
+        clientMutationId
+      }
+    }
+  `;
+
+  const variables = {
+    issueId
+  };
+
+  const result = await graphqlRequest(mutation, variables);
+  return result.clientMutationId;
 }
 
 async function linkIssueToProject(issueId, projectId) {
@@ -263,100 +302,18 @@ async function main() {
   const { id: ownerId, login: ownerLogin } = await getOwner();
   console.log('User ID:', ownerId);
 
-  //Check if repo is already created  
-  const olderRepositoryId = await getRepository(REPO_NAME, ownerLogin);
-  if (olderRepositoryId) {
-    //Ask for confirmation to delete repo
-    const userInput = await confirmAction(`Repository '${REPO_NAME}' already exists. Do you want to delete it?`);
-    if (!userInput.isConfirmed) {
-      console.log('Aborted. Exiting...');
-      process.exit(-1);
-    }
-    else {
-      await deleteRepository(ownerLogin, REPO_NAME);
-    }
-  }
-  await sleep(DELAY);
-
-  //Create repo
-  const repositoryId = await createRepository(REPO_NAME);
-  console.log('Repository created with ID:', repositoryId);
-  await sleep(DELAY);
-
-  //Check if project is already created  
-  const olderProjectId = await getProjects(ownerLogin, PROJECT_NAME);
-  if (olderProjectId) {
-    //Ask for confirmation to delete repo
-    const isConfirmed = await confirmAction(`Project '${PROJECT_NAME}' already exists. Do you want to delete it?`);
-    if (!isConfirmed) {
-      console.log('Aborted. Exiting...');
-      process.exit(-1);
-    }
-    else {
-      await deleteProject(ownerId, olderProjectId);
-    }
-  }
-  await sleep(DELAY);
-
-  //Create project
-  const projectId = await createProject(PROJECT_NAME, ownerId, repositoryId);
-  console.log('Project created with ID:', projectId);
-  await sleep(DELAY);
-
-  //Update project to public
-  await setProjectToPublic(projectId);
-  console.log('Project updated with ID:', projectId);
-  await sleep(DELAY);
-
-  //Process files
-  const BASE_DIR = './planning';
-  
-  const initialPath = path.join(BASE_DIR, framework);
-  try {
-    const userStoryFolders = await fs.readdir(initialPath);
-    for (const userStoryFolder of userStoryFolders) {
-      //process HU File
-      const filePath = path.join(initialPath, userStoryFolder, lang, `${userStoryFolder}.md`);
-      try {
-        const [title, description] = await extractInfoFromFile(filePath);
-
-        const milestoneId = await createMilestone(ownerLogin, REPO_NAME, title, description);
-        console.log('Milestone created with ID:', milestoneId);
-        await sleep(DELAY);
-
-        //process tasks files
-        const taskFiles = await fs.readdir(path.join(initialPath, userStoryFolder, lang));
-        for (const taskFile of taskFiles) {
-          if (taskFile.startsWith('Task')) {
-            const filePath = path.join(initialPath, userStoryFolder, lang, taskFile);
-            try {
-              const [title, description] = await extractInfoFromFile(filePath);
-
-              const issueId = await createIssue(repositoryId, milestoneId, title, description);
-              console.log('Issue created with ID:', issueId);
-              await sleep(DELAY);
-
-              const itemId = await linkIssueToProject(issueId, projectId);
-              console.log('Item created with ID:', itemId);
-              await sleep(DELAY);
-
-            } catch (err) {
-              console.error(`Unexpected error processing ${filePath}`);
-              console.error(err);
-            }
-          }
-        }
-
-      } catch (err) {
-        console.error(`Unexpected error processing ${filePath}`);
-        console.log(err);
+  //Check if repo is already created
+  const olderRepository = await getRepository(REPO_NAME, ownerLogin, "Filtrar e Ordenar");
+  console.log(olderRepository)
+  if (olderRepository) {    
+    for (const milestone of olderRepository?.milestones?.nodes ?? []) {
+      await deleteMilestone(ownerLogin, REPO_NAME, milestone.number);
+      console.log(`Milestone deleted: ${milestone.number}`);
+      for (const issue of milestone?.issues?.nodes ?? []) {
+        await deleteIssue(issue.id);
+        console.log(`Issue deleted: ${issue.id}`);
       }
     }
-
-  } catch (err) {
-    console.error(`Unexpected error processing ${initialPath}`);
-    console.error(err);
-    process.exit(-1);
   }
 }
 
